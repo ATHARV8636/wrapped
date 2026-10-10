@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  /* Matches the `canvas` token in tailwind.config.ts */
+  background-color: #0b0e17;
+  color: #f5f3ff;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #262c48 transparent;
+}
+
+::selection {
+  background: #7c6fff;
+  color: #0b0e17;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.story-scroll {
+  scroll-snap-type: y mandatory;
+  overflow-y: auto;
+  height: 100dvh;
+}
+
+.story-screen {
+  scroll-snap-align: start;
+  height: 100dvh;
+  width: 100%;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid #7c6fff;
+  outline-offset: 3px;
+}
